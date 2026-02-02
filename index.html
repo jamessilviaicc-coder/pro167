@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Games</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5649709120249101"
+     crossorigin="anonymous"></script>
+    
+    <!-- Clerk Authentication -->
+    <script
+        async
+        crossorigin="anonymous"
+        data-clerk-publishable-key="pk_test_Z2l2aW5nLW11bGUtMjAuY2xlcmsuYWNjb3VudHMuZGV2JA"
+        src="https://giving-mule-20.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+        type="text/javascript"
+    ></script>
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="logo-section">
+                <img src="favicon.ico" alt="Math Games Logo" id="logo">
+                <h1 class="site-title">Game<span class="title-accent">Zone</span></h1>
+            </div>
+            <div class="nav-controls">
+                <button id="account-btn" class="control-btn">
+                    <span class="icon-user">👤</span>
+                </button>
+                <button id="theme-toggle" class="control-btn">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div class="container">
+        <!-- Sidebar with Ads -->
+        <aside class="sidebar">
+            <div class="sidebar-sticky">
+                <div class="ad-container">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-3207320746484612"
+                         data-ad-slot="6119108528"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <div class="ad-container">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-3207320746484612"
+                         data-ad-slot="6119108529"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <div class="ad-container">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-3207320746484612"
+                         data-ad-slot="6119108530"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Game Area -->
+        <main class="main-content">
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-wrapper">
+                    <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-bar" placeholder="Search for your favorite game...">
+                </div>
+                <div class="game-count">
+                    <span id="visible-count">76</span> <span class="count-label">games available</span>
+                </div>
+            </div>
+
+            <!-- Games Grid -->
+            <div id="games">
+                <a href="games/stick-fight" class="game-card">
+                    <div class="card-image">
+                        <img src="images/stick-fight.png" alt="Stick Fight">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+		    <div class="game-title">Stick Fight</div>
+		<a href="games/speed-stars" class="game-card">
+                    <div class="card-image">
+                        <img src="images/speed-stars.png" alt="Speed Stars">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+		    <div class="game-title">Speed Stars</div>
+		<a href="games/doge-miner-2" class="game-card">
+                    <div class="card-image">
+                        <img src="images/doge-miner-2.png" alt="Doge Miner 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+		    <div class="game-title">Doge Miner 2</div>
+		<a href="games/magic-tiles" class="game-card">
+                    <div class="card-image">
+                        <img src="images/magic-tiles.png" alt="Magic Tiles">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+		    <div class="game-title">Magic Tiles 3</div>
+		<a href="games/PolyTrack" class="game-card">
+                    <div class="card-image">
+                        <img src="images/polytrack.png" alt="Poly Track">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+		    <div class="game-title">Poly Track</div>
+		<a href="games/Gambeling" class="game-card">
+                    <div class="card-image">
+                        <img src="images/gambling.png" alt="Gambling Simulator">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Gambling Simulator</div>
+                </a>
+                <a href="games/2048" class="game-card">
+                    <div class="card-image">
+                        <img src="images/favicon (copy).png" alt="2048">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">2048</div>
+                </a>
+                <a href="games/100ng" class="game-card">
+                    <div class="card-image">
+                        <img src="images/100ng-logo.png" alt="100ng">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">100ng</div>
+                </a>
+                <a href="games/1" class="game-card">
+                    <div class="card-image">
+                        <img src="images/1.png" alt="1 on 1 Soccer">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">1 on 1 Soccer</div>
+                </a>
+                <a href="games/9007199254740992" class="game-card">
+                    <div class="card-image">
+                        <img src="images/logo-4.png" alt="1v1 Space">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">1v1 Space</div>
+                </a>
+                <a href="https://gamesite.cdnpog.com/84d15f0f-2442-42d7-95f8-e63b354a1775/index.html" class="game-card">
+                    <div class="card-image">
+                        <img src="images/crossy-road-logo.png" alt="1v1.lol">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">1v1.lol</div>
+                </a>
+                <a href="games/99balls" class="game-card">
+                    <div class="card-image">
+                        <img src="images/99-balls-evo.jpg" alt="99 Balls">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">99 Balls</div>
+                </a>
+                <a href="games/a-dance-of-fire-and-ice" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash2.png" alt="A Dance of Fire and Ice">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">A Dance of Fire and Ice</div>
+                </a>
+                <a href="games/achievementunlocked" class="game-card">
+                    <div class="card-image">
+                        <img src="images/achievementunlocked.png" alt="Achievement Unlocked">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Achievement Unlocked</div>
+                </a>
+                <a href="games/adrenalinechallenge" class="game-card">
+                    <div class="card-image">
+                        <img src="images/adrenalinechallenge.jpg" alt="Adrenaline Challenge">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Adrenaline Challenge</div>
+                </a>
+                <a href="games/adventure-drivers" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash4.png" alt="Adventure Drivers">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Adventure Drivers</div>
+                </a>
+                <a href="games/ages-of-conflict" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash5.jpg" alt="Ages of Conflict">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Ages of Conflict</div>
+                </a>
+                <a href="games/alienhominid" class="game-card">
+                    <div class="card-image">
+                        <img src="images/alienhominid.jpg" alt="Alien Hominid">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Alien Hominid</div>
+                </a>
+                <a href="games/align-4" class="game-card">
+                    <div class="card-image">
+                        <img src="images/board.png" alt="Align 4">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Align 4</div>
+                </a>
+                <a href="games/amazing-rope-police" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash.jpeg" alt="Amazing Rope Police">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Amazing Rope Police</div>
+                </a>
+                <a href="games/amidst-the-clouds" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash6.png" alt="Amidst the Clouds">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Amidst the Clouds</div>
+                </a>
+                <a href="games/Amug-Us/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/red.png" alt="Among Us">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Among Us</div>
+                </a>
+                <a href="games/angry-sharks" class="game-card">
+                    <div class="card-image">
+                        <img src="images/angry-sharks.png" alt="Angry Sharks">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Angry Sharks</div>
+                </a>
+                <a href="games/aquapark-slides" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash7.png" alt="Aquapark Slides">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Aquapark Slides</div>
+                </a>
+                <a href="games/astray" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash8.png" alt="Astray">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Astray</div>
+                </a>
+                <a href="games/avalanche" class="game-card">
+                    <div class="card-image">
+                        <img src="images/avalanche.png" alt="Avalanche">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Avalanche</div>
+                </a>
+                <a href="games/awesometanks2" class="game-card">
+                    <div class="card-image">
+                        <img src="images/awesometanks2.jpg" alt="Awesome Tanks 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Awesome Tanks 2</div>
+                </a>
+                <a href="games/backrooms" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash2.jpg" alt="Backrooms">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Backrooms</div>
+                </a>
+                <a href="games/bacon-may-die" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash9.png" alt="Bacon May Die">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Bacon May Die</div>
+                </a>
+                <a href="games/basket-bros" class="game-card">
+                    <div class="card-image">
+                        <img src="images/basketbros.png" alt="Basket Bros">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Basket Bros</div>
+                </a>
+                <a href="games/basket-random" class="game-card">
+                    <div class="card-image">
+                        <img src="images/basket-random.jpg" alt="Basket Random">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Basket Random</div>
+                </a>
+                <a href="games/Basketball-Superstars/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/basketball-stars.png" alt="Basketball Superstars">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Basketball Superstars</div>
+                </a>
+                <a href="games/blockblast" class="game-card">
+                    <div class="card-image">
+                        <img src="images/blockblast.png" alt="Blockblast">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Blockblast</div>
+                </a>
+                <a href="games/bob-the-robber-2" class="game-card">
+                    <div class="card-image">
+                        <img src="images/bob-the-robber-2.png" alt="Bob The Robber 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Bob The Robber 2</div>
+                </a>
+                <a href="games/cars-simulator" class="game-card">
+                    <div class="card-image">
+                        <img src="images/splash11.png" alt="Cars Simulator">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Cars Simulator</div>
+                </a>
+                <a href="games/cookie-clicker" class="game-card">
+                    <div class="card-image">
+                        <img src="images/unnamed.png" alt="Cookie Clicker">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Cookie Clicker</div>
+                </a>
+                <a href="games/DASH" class="game-card">
+                    <div class="card-image">
+                        <img src="images/geoscratchicon.png" alt="Geometry Dash">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Geometry Dash</div>
+                </a>
+                <a href="games/SHOOT" class="game-card">
+                    <div class="card-image">
+                        <img src="images/images.jpg" alt="Getaway Shootout">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Getaway Shootout</div>
+                </a>
+                <a href="games/Hardest/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/the-worlds-hardest-game-2.jpg" alt="Worlds Hardest Game 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Worlds Hardest Game 2</div>
+                </a>
+                <a href="games/hackertype" class="game-card">
+                    <div class="card-image">
+                        <img src="images/favicon - Copy.ico" alt="Hacker Typer">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Hacker Typer</div>
+                </a>
+                <a href="games/Dino/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/icon-256.png" alt="Dino">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Dino</div>
+                </a>
+                <a href="games/Doodle-Jump/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/doodle.png" alt="Doodle Jump">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Doodle Jump</div>
+                </a>
+                <a href="games/drive-mad/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/drive-mad.jpg" alt="Drive Mad">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Drive Mad</div>
+                </a>
+                <a href="games/DriftBoss" class="game-card">
+                    <div class="card-image">
+                        <img src="images/drift-boss.png" alt="Drift Boss">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Drift Boss</div>
+                </a>
+                <a href="games/eggycar" class="game-card">
+                    <div class="card-image">
+                        <img src="images/egg.png" alt="EggyCar">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">EggyCar</div>
+                </a>
+                <a href="games/electrondash.html" class="game-card">
+                    <div class="card-image">
+                        <img src="images/electrondash.png" alt="Electron Dash">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Electron Dash</div>
+                </a>
+                <a href="games/FlappyBird/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/flappybirdlogo.png" alt="FlappyBird">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">FlappyBird</div>
+                </a>
+                <a href="games/FNAF2-main" class="game-card">
+                    <div class="card-image">
+                        <img src="images/fnaf2.png" alt="FNAF 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">FNAF 2</div>
+                </a>
+                <a href="games/fnaf" class="game-card">
+                    <div class="card-image">
+                        <img src="images/fnaf3.png" alt="FNAF">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">FNAF</div>
+                </a>
+                <a href="games/idle-breakout" class="game-card">
+                    <div class="card-image">
+                        <img src="images/idle-breakout.png" alt="Idle Breakout">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Idle Breakout</div>
+                </a>
+                <a href="games/M-15/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/download (2).jpeg" alt="Minecraft">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Minecraft</div>
+                </a>
+                <a href="games/MINER" class="game-card">
+                    <div class="card-image">
+                        <img src="images/dogecoin-d.png" alt="Miner">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Doge Miner 1</div>
+                </a>
+                <a href="games/monkey-mart" class="game-card">
+                    <div class="card-image">
+                        <img src="images/monkey-mart.jpg" alt="Monkey Mart">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Monkey Mart</div>
+                </a>
+                <a href="games/moto-x3m/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/moto-x3m.jpg" alt="Moto X3M">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Moto X3M</div>
+                </a>
+                <a href="games/motox3m2/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/motox3m2.jpg" alt="Moto X3M 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Moto X3M 2</div>
+                </a>
+                <a href="games/Paint" class="game-card">
+                    <div class="card-image">
+                        <img src="images/paint.png" alt="Paint">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Paint</div>
+                </a>
+                <a href="games/paperio2" class="game-card">
+                    <div class="card-image">
+                        <img src="images/paperio2.jpg" alt="Paper.io 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Paper.io 2</div>
+                </a>
+                <a href="games/POP" class="game-card">
+                    <div class="card-image">
+                        <img src="images/popl.jpeg" alt="Pop Cat">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Pop Cat</div>
+                </a>
+                <a href="games/retro-bowl" class="game-card">
+                    <div class="card-image">
+                        <img src="images/retro-bowl.jpg" alt="Retro Bowl">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Retro Bowl</div>
+                </a>
+                <a href="games/rooftop-snipers" class="game-card">
+                    <div class="card-image">
+                        <img src="images/app-icon.png" alt="Rooftop Snipers">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Rooftop Snipers</div>
+                </a>
+                <a href="games/slope/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/slope.jpg" alt="Slope">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Slope</div>
+                </a>
+                <a href="games/slope-2" class="game-card">
+                    <div class="card-image">
+                        <img src="images/slope-2-logo.png" alt="Slope 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Slope 2</div>
+                </a>
+                <a href="games/smash.html" class="game-card">
+                    <div class="card-image">
+                        <img src="images/share.png" alt="Smash Karts">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Smash Karts</div>
+                </a>
+                <a href="games/snowrider" class="game-card">
+                    <div class="card-image">
+                        <img src="images/snowrider.jpg" alt="Snowrider">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Snowrider</div>
+                </a>
+                <a href="games/SNAKE" class="game-card">
+                    <div class="card-image">
+                        <img src="images/snakeimg.jpeg" alt="Snake">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Snake</div>
+                </a>
+                <a href="games/Stack" class="game-card">
+                    <div class="card-image">
+                        <img src="images/stack.jpg" alt="Stack">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Stack</div>
+                </a>
+                <a href="games/SubwaySurfers/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/newyorkicon.png" alt="Subway Surfers">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Subway Surfers</div>
+                </a>
+                <a href="games/Tetris/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/tetris.png" alt="Tetris">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Tetris</div>
+                </a>
+                <a href="games/timeshooter3.html" class="game-card">
+                    <div class="card-image">
+                        <img src="images/time.png" alt="Time Shooter 3">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Time Shooter 3</div>
+                </a>
+                <a href="games/vex2" class="game-card">
+                    <div class="card-image">
+                        <img src="images/vex-2.jpg" alt="Vex 2">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Vex 2</div>
+                </a>
+                <a href="games/vex3" class="game-card">
+                    <div class="card-image">
+                        <img src="images/vex3.jpg" alt="Vex 3">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Vex 3</div>
+                </a>
+                <a href="games/vex4" class="game-card">
+                    <div class="card-image">
+                        <img src="images/vex4.jpg" alt="Vex 4">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Vex 4</div>
+                </a>
+                <a href="games/vex5" class="game-card">
+                    <div class="card-image">
+                        <img src="images/vex5.jpg" alt="Vex 5">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Vex 5</div>
+                </a>
+                <a href="games/vex6" class="game-card">
+                    <div class="card-image">
+                        <img src="images/vex6.jpeg" alt="Vex 6">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Vex 6</div>
+                </a>
+                <a href="games/vex7" class="game-card">
+                    <div class="card-image">
+                        <img src="images/vex7.jpeg" alt="Vex 7">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">Vex 7</div>
+                </a>
+                <a href="games/You Are Jeff Bezos.html/" class="game-card">
+                    <div class="card-image">
+                        <img src="images/icon.png" alt="You Are Jeff Bezos">
+                        <div class="card-overlay">
+                            <span class="play-btn">▶ PLAY</span>
+                        </div>
+                    </div>
+                    <div class="game-title">You Are Jeff Bezos</div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-backdrop"></div>
+        <div class="auth-container">
+            <button class="auth-close" id="close-auth">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="auth-split">
+                <!-- Left Side - Welcome Content -->
+                <div class="auth-left">
+                    <div class="auth-header">
+                        <div class="auth-icon">🎮</div>
+                        <h2 class="auth-title">Join Game<span class="title-accent">Zone</span></h2>
+                        <p class="auth-subtitle">Save your progress, track favorites, and compete with friends!</p>
+                    </div>
+
+                    <div class="auth-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⭐</span>
+                            <span class="benefit-text">Save Favorites</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🏆</span>
+                            <span class="benefit-text">Track High Scores</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">👥</span>
+                            <span class="benefit-text">Friend Leaderboards</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-footer">
+                        <p>Continue as guest? <button id="continue-guest" class="guest-btn">Skip for now</button></p>
+                    </div>
+                </div>
+
+                <!-- Right Side - Clerk Authentication -->
+                <div class="auth-right">
+                    <div class="auth-tabs">
+                        <button id="tab-signup" class="auth-tab active">Create Account</button>
+                        <button id="tab-signin" class="auth-tab">Sign In</button>
+                    </div>
+                    
+                    <!-- Clerk Components Container -->
+                    <div id="clerk-signup-container" class="clerk-container"></div>
+                    <div id="clerk-signin-container" class="clerk-container" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Menu Dropdown -->
+    <div id="user-menu" class="user-menu" style="display: none;">
+        <div class="user-menu-header">
+            <div id="user-avatar" class="user-avatar"></div>
+            <div class="user-info">
+                <div id="user-name" class="user-name">User</div>
+                <div id="user-email" class="user-email">user@example.com</div>
+            </div>
+        </div>
+        <div class="user-menu-divider"></div>
+        <button id="manage-account-btn" class="user-menu-item">
+            <span>⚙️</span> Manage Account
+        </button>
+        <button id="sign-out-btn" class="user-menu-item sign-out">
+            <span>🚪</span> Sign Out
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
